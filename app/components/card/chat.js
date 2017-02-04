@@ -6,24 +6,24 @@ import {
     Button
 } from 'react-native'
 
-class Home extends Component {
+class Chat extends Component {
 
     static navigationOptions = {
-        title: 'Home',
+        title: ({ state }) => `Chat with ${state.params.name}`,
         header: ({ state, setParams }) => ({
             right: (<Button
-                onPress={() => this.props.navigation.navigate('Chat', { name: 'Someone' })}
-                title="+"
+                onPress={() => this.props.navigation.navigate('Profile', {name: 'Lucy'})}
+                title="Info"
             />)
         })
     };
 
     render() {
+
+        const { params } = this.props.navigation.state;
+
         return (
-            <Button
-                onPress={() => this.props.navigation.navigate('Chat', { name: 'Someone' })}
-                title="Go to Someone's profile"
-            />
+            <View><Text>{ params.name }</Text></View>
         );
     }
 }
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Home
+export default Chat
