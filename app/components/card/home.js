@@ -10,6 +10,7 @@ class Home extends Component {
 
     static navigationOptions = {
         title: 'Home',
+        tabBar: { label: 'List' },
         header: ({ state, setParams }) => ({
             right: (<Button
                 onPress={() => this.props.navigation.navigate('Chat', { name: 'Someone' })}
@@ -17,6 +18,10 @@ class Home extends Component {
             />)
         })
     };
+
+    componentWillMount() {
+        console.log('Home')
+    }
 
     render() {
         return (

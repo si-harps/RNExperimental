@@ -8,7 +8,6 @@ import {
 
 import AppNavigator from '../appNavigator'
 import TabNavigator from '../tabNavigator'
-import CardNavigator from '../cardNavigator'
 
 export default class Root extends Component {
 

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as Actions from '../../actions/chat'
 import {
     View,
     Text,
@@ -10,6 +13,7 @@ class Chat extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `Chat with ${state.params.name}`,
+        tabBar: { label: 'List' },
         header: ({ state, setParams }) => ({
             right: (<Button
                 onPress={() => this.props.navigation.navigate('Profile', {name: 'Lucy'})}
@@ -17,6 +21,14 @@ class Chat extends Component {
             />)
         })
     };
+
+    componentWillMount() {
+        this.props.test({ message: 'This is a test' })
+    }
+
+    componentWillUnmount() {
+        console.log('Unmounting chat')
+    }
 
     render() {
 
@@ -41,4 +53,12 @@ const styles = StyleSheet.create({
 
 })
 
-export default Chat
+function mapStateToProps(state) {
+    return {}
+}
+
+function mapDispatchToprops(dispatch) {
+    return bindActionCreators(Actions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToprops)(Chat)

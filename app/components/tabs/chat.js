@@ -2,9 +2,9 @@ import {
     StackNavigator,
 } from 'react-navigation';
 
-import Home from './components/card/home'
-import Chat from './components/card/chat'
-import Settings from './components/card/settings'
+import Home from '../card/home'
+import Chat from '../card/chat'
+import Settings from '../card/settings'
 
 export default StackNavigator({
     Home: { screen: Home },
