@@ -8,14 +8,14 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Styles from '../../styles/tab'
 
-class HomeTab extends Component {
+class UserTab extends Component {
 
     render() {
 
         const { tintColor } = this.props
 
         return <Icon
-            name="home"
+            name="person"
             style={[ styles.icon, { color: tintColor }]}
         />
     }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
     // },
 });
 
-export default HomeTab
+export default UserTab
