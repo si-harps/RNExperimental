@@ -1,7 +1,18 @@
+import React, { Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Root from '../components/root'
 import * as NavigationActions from '../actions/navigation'
+
+import RootNavigator from '../navigators/root'
+
+class Root extends Component {
+
+    render() {
+        return (
+            <RootNavigator />
+        );
+    }
+}
 
 function mapStateToProps(state) {
     return {

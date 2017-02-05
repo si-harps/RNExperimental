@@ -13,7 +13,6 @@ class Chat extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `Chat with ${state.params.name}`,
-        tabBar: { label: 'List' },
         header: ({ state, setParams }) => ({
             right: (<Button
                 onPress={() => this.props.navigation.navigate('Profile', {name: 'Lucy'})}

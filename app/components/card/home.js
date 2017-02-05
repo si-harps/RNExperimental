@@ -10,10 +10,9 @@ class Home extends Component {
 
     static navigationOptions = {
         title: 'Home',
-        tabBar: { label: 'List' },
         header: ({ state, setParams }) => ({
             right: (<Button
-                onPress={() => this.props.navigation.navigate('Chat', { name: 'Someone' })}
+                onPress={() => this.props.navigation.back('Chat', { name: 'Someone' })}
                 title="+"
             />)
         })
@@ -21,14 +20,29 @@ class Home extends Component {
 
     componentWillMount() {
         console.log('Home')
+
+        console.log(this.props.navigation)
     }
 
     render() {
+
+        const { navigate, goBack } = this.props.navigation
+
         return (
-            <Button
-                onPress={() => this.props.navigation.navigate('Chat', { name: 'Someone' })}
-                title="Go to Someone's profile"
-            />
+            <View>
+                <Button
+                    onPress={() => navigate('Chat', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => navigate('Next', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => goBack(0)}
+                    title="Logout"
+                />
+        </View>
         );
     }
 }
