@@ -1,21 +1,38 @@
+import React from 'react'
 import {
     TabNavigator,
 } from 'react-navigation';
+import { StyleSheet } from 'react-native'
 
 import Chat from './chat'
 
-export default TabNavigator({
+import HomeTab from '../../components/tabs/home'
 
-    List:       { screen: Chat, navigationOptions: { tabBar: { label: 'Home' }}},
-    Settings:   { screen: Chat, navigationOptions: { tabBar: { label: 'Settings' }}},
-    Groups:     { screen: Chat, navigationOptions: { tabBar: { label: 'Groups' }}},
-    Stats:      { screen: Chat, navigationOptions: { tabBar: { label: 'Stats' }}},
-    Account:    { screen: Chat, navigationOptions: { tabBar: { label: 'Account' }}},
-
-}, {
+const options = {
     lazyLoad: true,
     tabBarOptions: {
-        showIcon: true
+        inactiveTintColor: '#bbb',
+        activeTintColor: '#fff',
+        showIcon: true,
+        showLabel: false,
+        style: {
+            backgroundColor: '#333',
+            borderTopColor: '#111',
+            borderTopWidth: StyleSheet.hairlineWidth,
+        },
+        labelStyle: {
+            display: 'none'
+        }
     },
-    animationEnabled: false
-});
+    animationEnabled: false,
+}
+
+export default TabNavigator({
+
+    List:       { screen: Chat, navigationOptions: { tabBar: { label: '', icon: (props) => (<HomeTab {...props} />) }}},
+    Settings:   { screen: Chat, navigationOptions: { tabBar: { label: '', icon: (props) => (<HomeTab {...props} />) }}},
+    Groups:     { screen: Chat, navigationOptions: { tabBar: { label: '', icon: (props) => (<HomeTab {...props} />) }}},
+    Stats:      { screen: Chat, navigationOptions: { tabBar: { label: '', icon: (props) => (<HomeTab {...props} />) }}},
+    Account:    { screen: Chat, navigationOptions: { tabBar: { label: '', icon: (props) => (<HomeTab {...props} />) }}},
+
+}, options);

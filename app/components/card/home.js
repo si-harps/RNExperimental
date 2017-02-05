@@ -42,7 +42,7 @@ class Home extends Component {
                     onPress={() => goBack(0)}
                     title="Logout"
                 />
-        </View>
+            </View>
         );
     }
 }

@@ -34,7 +34,34 @@ class Chat extends Component {
         const { params } = this.props.navigation.state;
 
         return (
-            <View><Text>{ params.name }</Text></View>
+            <View><Text>{ params.name }</Text>
+                <View style={{ height: 300, backgroundColor: 'red' }} />
+                <Button
+                    onPress={() => navigate('Chat', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => navigate('Next', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => goBack(0)}
+                    title="Logout"
+                />
+                <View style={{ height: 300 }} />
+                <Button
+                    onPress={() => navigate('Chat', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => navigate('Next', { name: 'Someone' })}
+                    title="Go to Someone's profile"
+                />
+                <Button
+                    onPress={() => goBack(0)}
+                    title="Logout"
+                />
+        </View>
         );
     }
 }
