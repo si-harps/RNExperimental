@@ -20,7 +20,7 @@ const options = {
         showIcon: true,
         showLabel: false,
         style: {
-            backgroundColor: '#222',
+            backgroundColor: '#333',
             borderTopColor: '#111',
             // borderTopWidth: StyleSheet.hairlineWidth,
         }

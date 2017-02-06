@@ -5,15 +5,17 @@ import {
     StyleSheet,
     Button
 } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Styles from '../../styles/card.style'
 
 class Home extends Component {
 
     static navigationOptions = {
         title: 'Home',
         header: ({ state, setParams }) => ({
-            right: (<Button
-                onPress={() => this.props.navigation.back('Chat', { name: 'Someone' })}
-                title="+"
+            right: (<Icon
+                name="menu"
+                style={{ fontSize: 20, right: 15 }}
             />)
         })
     };
@@ -29,7 +31,7 @@ class Home extends Component {
         const { navigate, goBack } = this.props.navigation
 
         return (
-            <View>
+            <View style={[ styles.wrapper ]}>
                 <Button
                     onPress={() => navigate('Chat', { name: 'Someone' })}
                     title="Go to Someone's profile"
@@ -48,7 +50,7 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-
+    ...Styles,
     title: {
         marginBottom: 20,
         fontSize: 22,

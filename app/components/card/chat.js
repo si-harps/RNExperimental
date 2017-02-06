@@ -6,17 +6,20 @@ import {
     View,
     Text,
     StyleSheet,
-    Button
+    Button,
+    ScrollView
 } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Styles from '../../styles/card.style'
 
 class Chat extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `Chat with ${state.params.name}`,
         header: ({ state, setParams }) => ({
-            right: (<Button
-                onPress={() => this.props.navigation.navigate('Profile', {name: 'Lucy'})}
-                title="Info"
+            right: (<Icon
+                name="settings"
+                style={{ fontSize: 20, right: 15 }}
             />)
         })
     };
@@ -32,9 +35,10 @@ class Chat extends Component {
     render() {
 
         const { params } = this.props.navigation.state;
+        const { navigate, goBack } = this.props.navigation
 
         return (
-            <View><Text>{ params.name }</Text>
+            <ScrollView style={[ styles.wrapper ]}><Text>{ params.name }</Text>
                 <View style={{ height: 300, backgroundColor: 'red' }} />
                 <Button
                     onPress={() => navigate('Chat', { name: 'Someone' })}
@@ -61,12 +65,13 @@ class Chat extends Component {
                     onPress={() => goBack(0)}
                     title="Logout"
                 />
-        </View>
+            </ScrollView>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    ...Styles,
 
     title: {
         marginBottom: 20,

@@ -6,7 +6,7 @@ import {
     Button
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Styles from '../../styles/tab'
+import Styles from '../../styles/tab.style'
 
 class UserTab extends Component {
 
