@@ -11,16 +11,17 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Styles from '../../styles/card.style'
+import { headerStyle, titleStyle } from '../../styles/header.style'
+import ButtonRight from '../header/button-right'
 
 class Chat extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `Chat with ${state.params.name}`,
-        header: ({ state, setParams }) => ({
-            right: (<Icon
-                name="settings"
-                style={{ fontSize: 20, right: 15 }}
-            />)
+        header: ({ state, setParams }, defaultHeader) => ({
+            style: headerStyle,
+            titleStyle: titleStyle,
+            right: (<ButtonRight icon="settings" />)
         })
     };
 
@@ -72,7 +73,6 @@ class Chat extends Component {
 
 const styles = StyleSheet.create({
     ...Styles,
-
     title: {
         marginBottom: 20,
         fontSize: 22,

@@ -5,26 +5,25 @@ import {
     StyleSheet,
     Button
 } from 'react-native'
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Styles from '../../styles/card.style'
+import { headerStyle, titleStyle } from '../../styles/header.style'
+import ButtonRight from '../header/button-right'
 
 class Home extends Component {
 
     static navigationOptions = {
         title: 'Home',
-        header: ({ state, setParams }) => ({
-            right: (<Icon
-                name="menu"
-                style={{ fontSize: 20, right: 15 }}
+        header: ({ state, setParams }, defaultHeader) => ({
+            style: headerStyle,
+            titleStyle: titleStyle,
+            right: (<ButtonRight
+                icon="menu"
+                onPress={ () => console.log('here' )}
             />)
         })
     };
-
-    componentWillMount() {
-        console.log('Home')
-
-        console.log(this.props.navigation)
-    }
 
     render() {
 

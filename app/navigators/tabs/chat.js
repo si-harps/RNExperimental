@@ -6,10 +6,13 @@ import Home from '../../components/card/home'
 import Chat from '../../components/card/chat'
 import Settings from '../../components/card/settings'
 
+const options = {
+
+}
+
 export default StackNavigator({
+
     Home: { screen: Home },
-    // Chat: { screen: Chat },
     Next: { screen: Chat }
-}, {
-    // headerMode: 'none'
-});
+    
+}, options);

@@ -20,8 +20,8 @@ const options = {
         showIcon: true,
         showLabel: false,
         style: {
-            backgroundColor: '#333',
-            borderTopColor: '#111',
+            backgroundColor: '#272822',
+            // borderTopColor: '#111',
             // borderTopWidth: StyleSheet.hairlineWidth,
         }
     },
