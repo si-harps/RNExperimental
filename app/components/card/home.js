@@ -25,12 +25,13 @@ class Home extends Component {
 
     static navigationOptions = {
         title: 'Home',
-        header: ({ state, setParams }) => ({
+        header: ({ state, setParams, navigate }) => ({
             style: headerStyle,
             titleStyle: titleStyle,
             right: (<ButtonRight
                 icon="menu"
-                onPress={ () => console.log('here' )}
+                navigate={navigate}
+                to="Settings"
             />),
             left: null
         })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
     StyleSheet,
-    TouchableHighlight
+    TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -9,17 +9,17 @@ class ButtonRight extends Component {
 
     render() {
 
-        const { icon, onPress } = this.props
+        const { icon, onPress, navigate, to } = this.props
 
-        return (<TouchableHighlight
+        return (<TouchableOpacity
             style={{ right: 15 }}
-            onPress={ this.props.onPress }
+            onPress={ () => navigate(to) }
         >
             <Icon
                 name={icon}
                 style={[ styles.icon ]}
             />
-        </TouchableHighlight>)
+        </TouchableOpacity>)
     }
 }
 

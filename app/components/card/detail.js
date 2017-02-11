@@ -24,10 +24,14 @@ class Detail extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `${state.params.item.title}`,
-        header: ({ state, setParams }, defaultHeader) => ({
+        header: ({ state, setParams, navigate }, defaultHeader) => ({
             style: headerStyle,
             titleStyle: titleStyle,
-            right: (<ButtonRight icon="settings" />),
+            right: (<ButtonRight
+                icon="settings"
+                navigate={navigate}
+                to="Settings"
+            />),
             // left: (<ButtonBack {...state} icon="chevron-left" />) // Possible feature request??
         })
     }
