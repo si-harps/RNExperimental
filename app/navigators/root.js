@@ -1,12 +1,12 @@
 // Top level StackNavigator
-// Responsible for main App TagNavigator and all modals
+// Responsible for main App TagNavigator and modals
+// App root handles drop in, all oher routes are modal
 
 import {
     StackNavigator,
 } from 'react-navigation';
 
 import TabNavigator from './tabs'
-import Authenticate from '../components/authentication/authenticate'
 import Settings from '../components/card/settings'
 
 export default StackNavigator({
