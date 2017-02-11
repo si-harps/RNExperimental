@@ -24,7 +24,7 @@ function mapStateToProps(state) {
 class Home extends Component {
 
     static navigationOptions = {
-        title: 'Home',
+        title: 'News Feed',
         header: ({ state, setParams, navigate }) => ({
             style: headerStyle,
             titleStyle: titleStyle,
