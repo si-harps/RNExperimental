@@ -64,7 +64,7 @@ class Detail extends Component {
                 </Text>
 
                 <Button
-                    onPress={() => navigate('SettingsModal', { username: 'Someone' })}
+                    onPress={() => navigate('Settings', { username: 'Someone' })}
                     title="Settings"
                 />
 
