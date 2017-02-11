@@ -28,7 +28,7 @@ class Detail extends Component {
             style: headerStyle,
             titleStyle: titleStyle,
             right: (<ButtonRight icon="settings" />),
-            // left: (<ButtonBack {...state} icon="chevron-left" />)
+            // left: (<ButtonBack {...state} icon="chevron-left" />) // Possible feature request??
         })
     }
 
