@@ -3,18 +3,17 @@ import {
 } from 'react-navigation';
 
 import TabNavigator from './tabs'
-import Login from '../components/authentication/login'
+import ModalStack from './modalStack'
 import Authenticate from '../components/authentication/authenticate'
-import Chat from '../components/card/chat'
+import Settings from '../components/card/settings'
 
 export default StackNavigator({
 
-    Auth: { screen: Authenticate, navigationOptions: { header: { visible: false }}},
-    Home: { screen: TabNavigator, navigationOptions: { header: { visible: false }}},
-    Chat: { screen: Chat }
+    Home:       { screen: TabNavigator, navigationOptions: { header: { visible: false }}},
+    Settings:   { screen: Settings },
+    // Modals:     { screen: ModalStack }
 
 }, {
     headerMode: 'screen',
-    initialRouteName: 'Auth',
-    // mode: 'modal'
+    initialRouteName: 'Home',
 });

@@ -1,13 +1,16 @@
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
-import * as NavigationActions from '../actions/navigation'
-
+import * as AuthActions from '../actions/authentication'
 import RootNavigator from '../navigators/root'
+import Authenticate from '../components/authentication/authenticate'
 
 class Root extends Component {
 
     render() {
+
+        if (!this.props.user)
+            return <Authenticate authenticate={this.props.authenticate} />
+
         return (
             <RootNavigator />
         );
@@ -16,12 +19,9 @@ class Root extends Component {
 
 function mapStateToProps(state) {
     return {
+        user: state.user,
         navigation: state.navigation
     }
 }
 
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators(NavigationActions, dispatch);
-// }
-
-export default connect(mapStateToProps)(Root)
+export default connect(mapStateToProps, AuthActions)(Root)

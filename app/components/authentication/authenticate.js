@@ -6,19 +6,26 @@ import {
     Button
 } from 'react-native'
 
-class Login extends Component {
+class Authenticate extends Component {
 
     static navigationOptions = {
-        title: 'Authenticating...'
-    };
+        title: 'Authentication',
+        header: {
+            title: 'Authenticate'
+        }
+    }
 
-    componentWillMount() {
-        setTimeout( () => this.props.navigation.navigate('Home'), 500)
+    constructor(props) {
+        super(props)
+    }
+
+    authenticate() {
+        this.props.authenticate()
     }
 
     render() {
         return (
-            <View><Text>Authenticating...</Text></View>
+            <Button title="authenticate" onPress={() => this.authenticate()} />
         );
     }
 }
@@ -41,4 +48,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Login
+export default Authenticate

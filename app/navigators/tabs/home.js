@@ -3,8 +3,7 @@ import {
 } from 'react-navigation';
 
 import Home from '../../components/card/home'
-import Chat from '../../components/card/chat'
-import Settings from '../../components/card/settings'
+import Detail from '../../components/card/detail'
 
 const options = {
 
@@ -12,7 +11,7 @@ const options = {
 
 export default StackNavigator({
 
-    Home: { screen: Home },
-    Next: { screen: Chat }
-    
+    Home:   { screen: Home },
+    Detail: { screen: Detail }
+
 }, options);
