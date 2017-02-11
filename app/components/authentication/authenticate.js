@@ -8,13 +8,6 @@ import {
 
 class Authenticate extends Component {
 
-    static navigationOptions = {
-        title: 'Authentication',
-        header: {
-            title: 'Authenticate'
-        }
-    }
-
     constructor(props) {
         super(props)
 
