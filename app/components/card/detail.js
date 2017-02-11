@@ -6,7 +6,8 @@ import {
     Text,
     StyleSheet,
     Button,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Styles from '../../styles/card.style'
@@ -24,15 +25,10 @@ class Detail extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `${state.params.item.title}`,
-        header: ({ state, setParams, navigate }, defaultHeader) => ({
+        header: ({ state, navigate }, defaultHeader) => ({
             style: headerStyle,
             titleStyle: titleStyle,
-            right: (<ButtonRight
-                icon="settings"
-                navigate={navigate}
-                to="Settings"
-            />),
-            // left: (<ButtonBack {...state} icon="chevron-left" />) // Possible feature request??
+            right: (state.params && state.params.right),
         })
     }
 
@@ -44,6 +40,34 @@ class Detail extends Component {
 
         if (!detail[index])
             this.props.fetchDetailState({ limit: 10 })
+    }
+
+    // Link right header button to component
+    // In this case we want the button to bookmark the detail item
+    componentDidMount() {
+
+        const { navigation } = this.props
+        const { index } = navigation.state.params.item
+
+        const params = {
+            right: (<TouchableOpacity
+                style={{ right: 15 }}
+                onPress={ () => this.bookmark({ index }) }
+            >
+                <Icon
+                    name="bookmark-border"
+                    style={{ fontSize: 20 }}
+                />
+            </TouchableOpacity>),
+        };
+
+        // Set the navigation params here
+        this.props.navigation.setParams(params);
+    }
+
+    // Trivial to navigate from within component context
+    bookmark(opts) {
+        console.log(`Bookmark detail ${opts.index}`)
     }
 
     render() {
