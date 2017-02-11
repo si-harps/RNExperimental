@@ -1,4 +1,4 @@
-# React Native - react-navigation experimental boiler plate
+# React Native - react-navigation / redux experimental boiler plate
 
 #### Installation
 
