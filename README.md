@@ -1,12 +1,15 @@
 # React Native - react-navigation / redux experimental boiler plate
 
-#### Installation
+#### Installation & Getting Started
 
 Simply clone the repo and install
 
 ```javascript
 npm install
+npm start react-native
 ```
+
+
 
 #### Application flow
 
