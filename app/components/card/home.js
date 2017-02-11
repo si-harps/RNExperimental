@@ -6,7 +6,7 @@ import {
     StyleSheet,
     Button,
     ScrollView,
-    TouchableHighlight
+    TouchableOpacity
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -54,9 +54,9 @@ class Home extends Component {
             <ScrollView style={[ styles.wrapper ]}>
                 { detail.map( (item, i) => {
                     return <View key={i}>
-                        <TouchableHighlight onPress={() => navigate('Detail', { item })}>
+                        <TouchableOpacity onPress={() => navigate('Detail', { item })}>
                             <View style={[ styles.item ]}></View>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                         <Button
                             title={ item.title }
                             onPress={() => navigate('Detail', { item })}

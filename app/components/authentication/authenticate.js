@@ -3,8 +3,7 @@ import {
     View,
     Text,
     StyleSheet,
-    Button,
-    TouchableHighlight
+    Button
 } from 'react-native'
 
 class Authenticate extends Component {
@@ -31,23 +30,24 @@ class Authenticate extends Component {
 
     render() {
         return (
-            <TouchableHighlight
-                style={styles.button}
-                onPress={() => this.authenticate()}
-            >
-            <Text>{ this.state.value }</Text>
-        </TouchableHighlight>
+            <View style={styles.container}>
+                <Button
+                    style={styles.button}
+                    title={ this.state.value }
+                    onPress={() => this.authenticate()}
+                />
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-
+    container: {
+        flex: 1,
+        marginTop: 50
+    },
     button: {
-        position: 'absolute',
-        top: 50,
-        left: 0,
-        right: 0
+
     }
 
 })
