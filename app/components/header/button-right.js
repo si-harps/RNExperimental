@@ -9,11 +9,11 @@ class ButtonRight extends Component {
 
     render() {
 
-        const { icon, onPress, navigate, to } = this.props
+        const { icon, onPress } = this.props
 
         return (<TouchableOpacity
             style={{ right: 15 }}
-            onPress={ () => navigate(to) }
+            onPress={ () => onPress() }
         >
             <Icon
                 name={icon}

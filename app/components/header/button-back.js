@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
     StyleSheet,
-    TouchableHighlight
+    TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -9,16 +9,17 @@ class ButtonBack extends Component {
 
     render() {
 
-        const { icon, onPress } = this.props
+        const { goBack } = this.props
 
-        return (<TouchableHighlight
-            style={{ left: 10 }}
+        return (<TouchableOpacity
+            style={{ left: 5 }}
+            onPress={() => goBack()}
         >
             <Icon
                 name="chevron-left"
                 style={[ styles.icon ]}
             />
-        </TouchableHighlight>)
+        </TouchableOpacity>)
     }
 }
 

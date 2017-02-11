@@ -30,8 +30,7 @@ class Home extends Component {
             titleStyle: titleStyle,
             right: (<ButtonRight
                 icon="menu"
-                navigate={navigate}
-                to="Settings"
+                onPress={() => navigate('Settings')}
             />),
             left: null
         })

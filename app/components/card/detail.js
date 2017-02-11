@@ -25,10 +25,11 @@ class Detail extends Component {
 
     static navigationOptions = {
         title: ({ state }) => `${state.params.item.title}`,
-        header: ({ state, navigate }, defaultHeader) => ({
+        header: ({ state, goBack }, defaultHeader) => ({
             style: headerStyle,
             titleStyle: titleStyle,
             right: (state.params && state.params.right),
+            left: (<ButtonBack goBack={goBack} />)
         })
     }
 
@@ -50,15 +51,10 @@ class Detail extends Component {
         const { index } = navigation.state.params.item
 
         const params = {
-            right: (<TouchableOpacity
-                style={{ right: 15 }}
-                onPress={ () => this.bookmark({ index }) }
-            >
-                <Icon
-                    name="bookmark-border"
-                    style={{ fontSize: 20 }}
-                />
-            </TouchableOpacity>),
+            right: (<ButtonRight
+                icon="bookmark-border"
+                onPress={() => this.bookmark({ index })}
+            />),
         };
 
         // Set the navigation params here
