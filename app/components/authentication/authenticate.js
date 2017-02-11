@@ -3,7 +3,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Button
+    Button,
+    TouchableHighlight
 } from 'react-native'
 
 class Authenticate extends Component {
@@ -17,33 +18,36 @@ class Authenticate extends Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            value: 'Let me in!'
+        }
     }
 
     authenticate() {
+        this.setState({ value: 'Authenticating...' })
         this.props.authenticate()
     }
 
     render() {
         return (
-            <Button title="authenticate" onPress={() => this.authenticate()} />
+            <TouchableHighlight
+                style={styles.button}
+                onPress={() => this.authenticate()}
+            >
+            <Text>{ this.state.value }</Text>
+        </TouchableHighlight>
         );
     }
 }
 
 const styles = StyleSheet.create({
 
-    title: {
-        marginBottom: 20,
-        fontSize: 22,
-        textAlign: 'center'
-    },
-    container: {
-        paddingTop: 60
-    },
     button: {
         position: 'absolute',
-        top: 0,
-        bottom: 0
+        top: 50,
+        left: 0,
+        right: 0
     }
 
 })
