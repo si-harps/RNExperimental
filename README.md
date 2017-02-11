@@ -22,7 +22,7 @@ The application runs as a TabNavigator containing StackNavigator components. The
 |           +-- containers/rootContainer.js
 |               +-- store/configureStore.js
 |               +-- navigators/root.js      [StackNavigator]
-|                   +-- Home                [TabNavigator]
+|                   +-- App                 [TabNavigator]
 |                       +-- List            [StackNavigator]
 |                           +-- ...Screens  [Multiple Screens]
 |                       +-- Groups          [StackNavigator]

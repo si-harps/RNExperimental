@@ -1,3 +1,6 @@
+// Top level StackNavigator
+// Responsible for main App TagNavigator and all modals
+
 import {
     StackNavigator,
 } from 'react-navigation';
@@ -8,10 +11,11 @@ import Settings from '../components/card/settings'
 
 export default StackNavigator({
 
-    Home:       { screen: TabNavigator, navigationOptions: { header: { visible: false }}},
+    App:        { screen: TabNavigator, navigationOptions: { header: { visible: false }}},
     Settings:   { screen: Settings }
 
 }, {
     headerMode: 'screen',
-    initialRouteName: 'Home',
+    initialRouteName: 'App',
+    mode: 'modal'
 });
