@@ -3,7 +3,7 @@
 // App root handles drop in, all oher routes are modal
 
 import {
-    StackNavigator,
+    StackNavigator
 } from 'react-navigation';
 
 import TabNavigator from './tabs'
