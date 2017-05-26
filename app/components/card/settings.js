@@ -5,19 +5,18 @@ import { headerStyle, titleStyle } from "../../styles/header.style";
 import ButtonRight from "../header/button-right";
 
 class Settings extends Component {
-  static navigationOptions = { title: "Settings" };
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation, screenProps}) => ({
+    
     title: "Settings",
-    header: ({ goBack }) => ({
-      style: headerStyle,
-      titleStyle: titleStyle,
-      right: <ButtonRight icon="done" onPress={() => goBack()} />,
-      left: null
-    })
-  };
+    headerStyle,
+    headerTitleStyle: titleStyle,
+    headerRight: <ButtonRight icon="done" onPress={() => navigation.goBack()} />,
+    headerLeft: null
+  });
 
   render() {
+
     const { navigate, goBack } = this.props.navigation;
 
     return <Button onPress={() => goBack()} title="Go Back" />;
